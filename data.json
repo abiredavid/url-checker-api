@@ -1,0 +1,232 @@
+[
+    {
+        "url": "hotpage.com",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "coldpage.com",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "monster.com",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "happy.com",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "runaway.com",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "verynice.com",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "hotpage.org",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "coldpage.giv",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "monster.org",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "happy.it",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "runaway.edu",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "verynice.au",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "reliable.com",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "unreliable.com",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "works.com",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "doesnotwork.com",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "great.com",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "notgreat.org",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "notevil.giv",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "evil.org",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "relax.it",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "cantrelax.edu",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "final.au",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "fishy.com",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "notfishy.com",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "terrible.com",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "notterrible.com",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "nuclear.com",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "passive.com",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "active.org",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "coordinated.giv",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "uncoordinated.org",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "moving.it",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "notmoving.edu",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "movingfast.au",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "tooslow.com",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "felony.com",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "restricted.com",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "unrestricted.com",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "uncanny.com",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "funnypage.org",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "notfunny.giv",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "iwishthisworks.org",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "worksgreat.it",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    },
+    {
+        "url": "itjustdoesnotwork.edu",
+        "isSafe": false,
+        "description": "Contains malware and unsafe to access"
+    },
+    {
+        "url": "downtown.au",
+        "isSafe": true,
+        "description": "Url is safe to access" 
+    }
+]
