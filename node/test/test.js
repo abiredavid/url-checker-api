@@ -18,9 +18,9 @@ describe('/GET /', () => {
         });
   });
   describe('/GET /urlinfo/1/:urlQueryString', () => {
-    it('it should return safe for worksgreat.it:8080/?dependencies?sortBy=dependency&order=asc&page=1&perPage=500', (done) => {
+    it('it should return safe for worksgreat.it:8080/foo/?sortBy=dependency&order=asc&page=1&perPage=500', (done) => {
       chai.request(server)
-          .get('/urlinfo/1/worksgreat.it:8080/?dependencies?sortBy=dependency&order=asc&page=1&perPage=500')
+          .get('/urlinfo/1/worksgreat.it:8080/foo/?sortBy=dependency&order=asc&page=1&perPage=500')
           .end((err, res) => {
               res.should.have.status(200);
               res.body.should.be.a('object');
@@ -32,9 +32,9 @@ describe('/GET /', () => {
   });
   
   describe('/GET /urlinfo/1/:urlQueryString', () => {
-    it('it should return unsafe for terrible.com:80/?dependencies?sortBy=dependency&order=asc&page=3&perPage=500', (done) => {
+    it('it should return unsafe for terrible.com:80/foo/?sortBy=dependency&order=asc&page=1&perPage=500', (done) => {
       chai.request(server)
-          .get('/urlinfo/1/terrible.com:80/?dependencies?sortBy=dependency&order=asc&page=3&perPage=500')
+          .get('/urlinfo/1/terrible.com:80/foo/?sortBy=dependency&order=asc&page=1&perPage=500')
           .end((err, res) => {
               res.should.have.status(200);
               res.body.should.be.a('object');
@@ -46,9 +46,9 @@ describe('/GET /', () => {
   });
 
   describe('/GET /urlinfo/1/:urlQueryString', () => {
-    it('it should return unsafe for unrestricted.com:8080/?dependencies?sortBy=dependency&order=asc&page=1&perPage=500', (done) => {
+    it('it should return unsafe for unrestricted.com:8080/foo/?sortBy=dependency&order=asc&page=1&perPage=500', (done) => {
       chai.request(server)
-          .get('/urlinfo/1/unrestricted.com:8080/?dependencies?sortBy=dependency&order=asc&page=1&perPage=500')
+          .get('/urlinfo/1/unrestricted.com:8080/foo/?sortBy=dependency&order=asc&page=1&perPage=500')
           .end((err, res) => {
               res.should.have.status(200);
               res.body.should.be.a('object');
@@ -60,11 +60,11 @@ describe('/GET /', () => {
   });
 
   describe('/GET /urlinfo/1/:urlQueryString', () => {
-    it('it should return 400 for unrestricted.gov:8000/?dependencies?sortBy=dependency&order=asc&page=1&perPage=500', (done) => {
+    it('it should return 404 for unrestricted.gov:8000/foo/?sortBy=dependency&order=asc&page=1&perPage=500', (done) => {
       chai.request(server)
-          .get('/urlinfo/1/unrestricted.gov:8000/?dependencies?sortBy=dependency&order=asc&page=1&perPage=500')
+          .get('/urlinfo/1/unrestricted.gov:8000/foo/?sortBy=dependency&order=asc&page=1&perPage=500')
           .end((err, res) => {
-              res.should.have.status(400);
+              res.should.have.status(404);
               res.body.should.be.a('object');
             done();
           });
