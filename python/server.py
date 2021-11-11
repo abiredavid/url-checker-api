@@ -1,41 +1,48 @@
-from flask import *
+from flask import Flask, request, jsonify
 import json
-import re
+from urllib.parse import urlparse
 
+
+# Init app
 app = Flask(__name__)
-# Load data file in memory to speed up lookup
+
+#data
 db_file = open("../data/data.json")
 db_dump = json.load(db_file)
 
+INVALID_HOSTNAME = "hostname: {} does not exist in database."
+INVALID_URL = "provided url: {} is invalid."
+
 @app.route('/', methods=['GET'])
 def home_page():
-    response_data = {
+    return {
         'Page': 'Home',
         'msg': 'The URL checker API Home'
     }
-    json_dump = json.dumps(response_data)
-    
-    return json_dump
 
-@app.route('/urlinfo/1/<string:hostname_and_port>/<string:path_and_qstr>', methods=['GET'])
-def url_info(hostname_and_port, path_and_qstr):
-    hostname = re.sub(':\d*', '', hostname_and_port)
-    print(hostname)
-    
-    response_data = list(filter(lambda x:x["url"]==hostname,db_dump))
-    print(len(response_data))
-    
-    if response_data:
-        return(response_data[0])
-        
+@app.route('/urlinfo/1/<path:url_string>', methods=['GET'])
+def url_info(url_string):
+    hostname = urlparse(url_string).scheme
+
+    if hostname:
+        response_data = list(filter(lambda x:x["url"]==hostname,db_dump))
     else:
-        response_data = {
-            'url': hostname,
-            'msg': 'hostname ' + hostname + ' does not exist in the database'
-        }
-        json_dump = json.dumps(response_data)
-        
-        return json_dump, 404
-        
-if __name__ == '__main__':
-    app.run(port=9009)
+        return create_response(url_string, INVALID_URL.format(url_string), 400)
+
+    if response_data:
+        return response_data[0]
+    else:
+        return create_response(hostname, INVALID_HOSTNAME.format(hostname), 404)
+
+
+def create_response(url, message, code):
+    response_data = {
+        'url': url,
+        'msg': message
+    }
+
+    return response_data, code
+
+if __name__ == "__main__":
+    # Threaded option to enable multiple instances for multiple user access support
+    app.run(debug=False, threaded=True, port=5000)

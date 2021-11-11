@@ -4,15 +4,21 @@ const app = express()
 const data = require("../data/data.json")
 
 
+
+function getHostnameObject(req){
+    const hostname_and_port = req.params.hostname_and_port
+    const hostname = hostname_and_port.replace(/:\d*/, "")
+    return data.filter( record => record.url === hostname)
+
+}
+
 app.get('/', (req, res) => {
     res.json('The URL checker API Home')
 })
 
 app.get('/urlinfo/1/:hostname_and_port/:path_and_qstr', (req, res) => {
-    const hostname_and_port = req.params.hostname_and_port
-    const hostname = hostname_and_port.replace(/:\d*/, "")
-    result = data.filter( record => record.url === hostname)
-    
+    const result = getHostnameObject(req)
+
     if (result.length === 0) {
         res.status(404).send('ERROR: hostname "' + hostname + '" does not exist in the database')
     }

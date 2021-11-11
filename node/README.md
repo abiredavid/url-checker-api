@@ -38,7 +38,7 @@ GET /urlinfo/1/{hostname_and_port}/{original_path_and_query_string}
 The API responds with an object that contains the following attributes for hostname that exist in it's database
 - **url**: This is the base url for example: `whereisthatsite.com`
 - **isSafe**: This is a boolean value that is `true` if the url is safe to access.
-- **description**: This is string that describes the reason the url is consider unsafe or just information that the site is safe to for access.
+- **description**: This is string that describes the reason the url is consider unsafe or just information that the site is safe to access.
 
 In a case where the url does not exist in the API's database, the API returns an error message and HTTP_404;
 
@@ -48,3 +48,23 @@ ERROR: hostname "funnypage.ore" does not exist in the database
 ```
 
 - Python
+
+**Example**
+- Check for a safe URL `uncanny.com:8002/foo/?sortBy=dependency&order=asc&page=1&perPage=500` 
+```
+$ curl http://localhost:8000/urlinfo/1/uncanny.com:8002/foo/?sortBy=dependency&order=asc&page=1&perPage=500
+
+{"url":"uncanny.com","isSafe":true,"description":"Url is safe to access"}
+```
+- Check for an unsafe URL `coldpage.com:8001/foo/?sortBy=dependency&order=asc&page=1&perPage=500`
+```
+$ curl http://localhost:8000/urlinfo/1/coldpage.com:8001/foo/?sortBy=dependency&order=asc&page=1&perPage=500
+
+{"url":"coldpage.com","isSafe":true,"description":"Url is safe to access"}
+```
+- Check for a URL that does not exist in the API database `coldpage.se:8001/foo/?sortBy=dependency&order=asc&page=1&perPage=500`
+```
+$ curl http://localhost:8000/urlinfo/1/coldpage.se:8001/foo/?sortBy=dependency&order=asc&page=1&perPage=500
+
+ERROR: hostname "coldpage.se" does not exist in the database
+```
