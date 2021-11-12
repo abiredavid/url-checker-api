@@ -1,7 +1,6 @@
 from server import app
 
 import unittest
-import json
 
 class TestUrlApp(unittest.TestCase):
 

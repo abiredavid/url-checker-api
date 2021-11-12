@@ -96,3 +96,7 @@ test_server.py .......                                                          
 ```
 
 
+**Status Codes**
+- HTTP **200** : Successful request
+- HTTP **400** : Invalid URL
+- HTTP **404** : No information available for the requested URL
