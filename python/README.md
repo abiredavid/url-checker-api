@@ -37,7 +37,7 @@ GET /urlinfo/1/{hostname_and_port}/{original_path_and_query_string}
 The API responds with an object that contains the following attributes for hostname that exist in it's database
 - **url**: This is the base url for example: `whereisthatsite.com`
 - **isSafe**: This is a boolean value that is `true` if the url is safe to access.
-- **description**: This is string that gives a brief description of safety status of the url.
+- **description**: This is a string that gives a brief description of the safety status of the url.
 
 In a case where the url does not exist in the API's database, the API returns an error message and HTTP 404;
 

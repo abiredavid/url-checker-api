@@ -42,12 +42,9 @@ The API responds with an object that contains the following attributes for hostn
 
 In a case where the url does not exist in the API's database, the API returns an error message and HTTP_404;
 
-- Node
 ```
 ERROR: hostname "funnypage.ore" does not exist in the database
 ```
-
-- Python
 
 **Example**
 - Check for a safe URL `uncanny.com:8002/foo/?sortBy=dependency&order=asc&page=1&perPage=500` 
@@ -67,4 +64,15 @@ $ curl http://localhost:8000/urlinfo/1/coldpage.com:8001/foo/?sortBy=dependency&
 $ curl http://localhost:8000/urlinfo/1/coldpage.se:8001/foo/?sortBy=dependency&order=asc&page=1&perPage=500
 
 ERROR: hostname "coldpage.se" does not exist in the database
+```
+
+**Test**
+The test utilizes mocha and to run the test, install mocha globally
+```
+$ npm install -g mocha
+```
+
+Then run the test as follows
+```
+$ mocha --exit
 ```
