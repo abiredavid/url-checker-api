@@ -9,7 +9,7 @@ URL Checker API is an API that take a URL as an input and validates against it's
 - Clone the repository https://github.com/abiredavid/url-checker-api
 - Change directory into the already cloned repo
 ```
-$ cd url-checker-api
+$ cd url-checker-api/node
 ```
 - Install project dependencies
 ```

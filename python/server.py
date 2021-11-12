@@ -20,14 +20,15 @@ def home_page():
         'msg': 'The URL checker API Home'
     }
 
-@app.route('/urlinfo/1/<path:url_string>', methods=['GET'])
-def url_info(url_string):
-    hostname = urlparse(url_string).scheme
+@app.route('/urlinfo/1/<path:url>', methods=['GET'])
+def url_info(url):
+
+    hostname = convert_url_to_hostname(url)
 
     if hostname:
-        response_data = list(filter(lambda x:x["url"]==hostname,db_dump))
+        response_data = get_url_info_if_exists(hostname)
     else:
-        return create_response(url_string, INVALID_URL.format(url_string), 400)
+        return create_response(url, INVALID_URL.format(url), 400)
 
     if response_data:
         return response_data[0]
@@ -42,6 +43,15 @@ def create_response(url, message, code):
     }
 
     return response_data, code
+
+
+def get_url_info_if_exists(hostname):
+    return list(filter(lambda x:x["url"]==hostname,db_dump))
+
+
+def convert_url_to_hostname(url):
+    return urlparse(url + "/").scheme
+
 
 if __name__ == "__main__":
     # Threaded option to enable multiple instances for multiple user access support
